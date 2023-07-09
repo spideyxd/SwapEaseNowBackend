@@ -13,7 +13,7 @@ app.use(express.json());
 // to link the router file to route the path easily
 app.use(require('./router/auth'));
 
-const PORT=process.env.PORT;
+const PORT=process.env.PORT || 5000;
 
 //Middleware
 
