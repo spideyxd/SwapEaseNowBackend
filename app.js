@@ -2,10 +2,16 @@ const dotenv=require("dotenv");
 const mongoose=require('mongoose');
 const express=require('express');
 const app=express();
+const cors = require('cors');
+
 
 dotenv.config({path: './config.env'});
 
 const User=require('./models/userSchema');
+app.use(cors());
+app.use(cors({
+  origin: 'https://cheery-cat-24f10d.netlify.app' // Replace with your frontend domain
+}));
 
 require('./db/conn.js');
 app.use(express.json());
