@@ -10,7 +10,7 @@ dotenv.config({path: './config.env'});
 const User=require('./models/userSchema');
 app.use(cors());
 app.use(cors({
-  origin: 'swapease-now.vercel.app' // Replace with your frontend domain
+  origin: 'https://swapease-now.vercel.app' // Replace with your frontend domain
 }));
 
 require('./db/conn.js');
