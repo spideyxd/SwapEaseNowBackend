@@ -8,11 +8,11 @@ const cors = require('cors');
 dotenv.config({path: './config.env'});
 
 const User=require('./models/userSchema');
-app.use(cors({
-  origin: ["https://swapease-now.vercel.app"],
-  methods: ["POST","GET"],
-  credentials: true
-}));
+const corsOptions = {
+  origin: true,
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 require('./db/conn.js');
 app.use(express.json());
